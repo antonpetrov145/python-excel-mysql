@@ -9,8 +9,7 @@ ws = wb['sheet']
 
 for i in range(2, ws.max_row+1):
     row = [cell.value for cell in ws[i]]
-    #print (row)
-    cursor.execute("""INSERT INTO table (num,chip) VALUES (%s,%s)""", (str(row[1]), str(row[2]), ))
+    cursor.execute("""INSERT INTO table (col1,col2) VALUES (%s,%s)""", (str(row[1]), str(row[2]), ))
 
 db.commit()
 db.close()
